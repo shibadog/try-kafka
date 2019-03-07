@@ -1,0 +1,38 @@
+---
+version: '2'
+services:
+  producer:
+    image: openjdk:8u181-jdk-alpine
+    container_name: producer
+    environment:
+      - bootstrap.servers=broker:9092
+    depends_on:
+      - consumer
+    volumes:
+      - ".:/work"
+    working_dir: "/work"
+    entrypoint:
+      - java
+      - -jar
+      - sample-producer/target/sample-producer-1.0-SNAPSHOT-jar-with-dependencies.jar
+    networks:
+      - kafka_kafka
+
+  consumer:
+    image: openjdk:8u181-jdk-alpine
+    container_name: consumer
+    environment:
+      - bootstrap.servers=broker:9092
+    volumes:
+      - ".:/work"
+    working_dir: "/work"
+    entrypoint:
+      - java
+      - -jar
+      - sample-consumer/target/sample-consumer-1.0-SNAPSHOT-jar-with-dependencies.jar
+    networks:
+      - kafka_kafka
+
+networks:
+  kafka_kafka:
+    external: true
