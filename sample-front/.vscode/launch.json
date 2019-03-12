@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FrontApplication<sample-front>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "jp.shibadog.sample.front.FrontApplication",
+            "projectName": "sample-front",
+            "args": ""
+        }
+    ]
+}

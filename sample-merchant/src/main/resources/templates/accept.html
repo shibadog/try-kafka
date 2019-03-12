@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>購入受付</h1>
+        <div>
+            <div>商品画像</div>
+            <div>商品名: parrot</div>
+            <div>購入金額: 1,000</div>
+            <div>
+                購入受付が完了しました。<br />
+                受付番号は「 [[${acceptKey}]] 」になります。<br />
+                状態については、<a th:href="@{/status?acceptKey={acceptKey}(acceptKey=${acceptKey})}">こちら</a>で確認をしてください。
+            </div>
+        </div>
+    </body>
+</html>
