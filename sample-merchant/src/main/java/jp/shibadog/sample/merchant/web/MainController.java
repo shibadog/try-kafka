@@ -1,6 +1,7 @@
 package jp.shibadog.sample.merchant.web;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class MainController {
 
         String url = frontUrl + "/purchase";
         @SuppressWarnings("unchecked") Map<String, Object> req = 
-            restTemplate.postForObject(url, null, Map.class);
+            restTemplate.postForObject(url, Collections.emptyMap(), Map.class);
         String acceptKey = req.get("acceptKey").toString();
 
         model.addAttribute("acceptKey", acceptKey);

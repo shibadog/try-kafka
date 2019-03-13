@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <!-- <module>sample-back</module> -->
+    <module>sample-back</module>
     <module>sample-front</module>
     <!-- <module>sample-payment</module> -->
     <module>sample-merchant</module>
